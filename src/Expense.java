@@ -12,6 +12,14 @@ public class Expense {
         this.note = note;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
     public String toFileString() {
         return date + "," + category + "," + amount + "," + note;
     }

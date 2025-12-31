@@ -8,12 +8,13 @@ public class Main {
         int choice;
 
         do {
-            System.out.println("\n====== EXPENSE TRACKER ======");
+            System.out.println("\n==== EXPENSE TRACKER ====");
             System.out.println("1. Add Expense");
-            System.out.println("2. View Expenses");
-            System.out.println("3. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.println("2. View All Expenses");
+            System.out.println("3. Category-wise Summary");
+            System.out.println("4. Exit");
 
+            System.out.print("Enter your choice: ");
             choice = sc.nextInt();
             sc.nextLine(); // clear buffer
 
@@ -27,7 +28,7 @@ public class Main {
 
                     System.out.print("Enter amount: ");
                     double amount = sc.nextDouble();
-                    sc.nextLine(); // clear buffer
+                    sc.nextLine();
 
                     System.out.print("Enter note: ");
                     String note = sc.nextLine();
@@ -41,14 +42,18 @@ public class Main {
                     break;
 
                 case 3:
+                    ExpenseManager.showCategorySummary();
+                    break;
+
+                case 4:
                     System.out.println("Thank you for using Expense Tracker!");
                     break;
 
                 default:
-                    System.out.println("Invalid choice. Try again.");
+                    System.out.println("Invalid choice.");
             }
 
-        } while (choice != 3);
+        } while (choice != 4);
 
         sc.close();
     }
